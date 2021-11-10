@@ -2,8 +2,6 @@
 
 A service that can perform various tax calculations for a store.
 
-This is an example service for a coding interview. See [PROBLEM.md](./PROBLEM.md) for a copy of the problem description.
-
 ## Running tests
 
 ```bash
