@@ -25,4 +25,11 @@ class StateControllerTest {
         Assertions.assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         Assertions.assertThat(response.getBody().getStates()).contains("TX");
     }
+
+    @Test
+    void shouldAcceptTaxRatePerState(){
+        ResponseEntity<String> response = restTemplateBuilder.build().postForEntity("http://localhost:" + port + "/states/UT/tax", 0.0685, String.class);
+
+        Assertions.assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
 }

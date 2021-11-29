@@ -23,4 +23,12 @@ internal class StateControllerTest {
         Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
         Assertions.assertThat(response.body).contains("TX")
     }
+
+    @Test
+    fun `should accept tax rate per state`() {
+        val response = restTemplateBuilder!!.build()
+            .postForEntity("http://localhost:$port/states/UT/tax", 0.0685, String::class.java)
+
+        Assertions.assertThat(response.statusCode).isEqualTo(HttpStatus.OK)
+    }
 }

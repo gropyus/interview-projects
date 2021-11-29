@@ -14,6 +14,8 @@ A service that can perform various tax calculations for a store.
 # start the server
 ./mvnw spring-boot:run
 
-# interact
+# interact - get the list of supported states
 curl localhost:8080/states
+# interact - define the tax amount per state
+curl -X POST -H 'Content-Type: application/json' -d '0.08' localhost:8080/states/UT/tax
 ```
